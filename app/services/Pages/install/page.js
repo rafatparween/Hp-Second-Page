@@ -294,7 +294,7 @@ function Printersearch() {
                   onClick={handleButtonClick} // Handle button click to show popup
                   className="mt-[100px] border border-white bg-white w-[230px] h-[50px] py-2 px-6 rounded-lg font-bold shadow-md hover:bg-gray-100 transition duration-300 2xl:ml-[-193px] xl:ml-[-187px]"
                 >
-                  <h1 className="text-[16px] text-black">Install HP Easy Start</h1>
+                  <h1 className="text-[14px] text-black">Install HP Smart & Drivers</h1>
                 </button>
               </div>
 
