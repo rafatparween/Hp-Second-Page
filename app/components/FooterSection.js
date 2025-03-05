@@ -1,25 +1,23 @@
+import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faFacebook, faInstagram, faTwitter, faYoutube, faTiktok } from '@fortawesome/free-brands-svg-icons';
-import Link from 'next/link';
+
 
 const FooterSection = () => {
   return (
-    <footer className="bg-black text-gray-400 text-sm">
+    <footer className="bg-black text-gray-400 text-sm w-full">
       {/* Upper part with links */}
-      <div className="max-w-7xl mx-auto py-10 grid grid-cols-2 md:grid-cols-5 gap-8 2xl:ml-[179px] xl:ml-[133px]">
+      <div className="max-w-[1450px] w-[90%] mx-auto py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        
         {/* First Column */}
         <div>
           <ul>
             <li className="mb-2 text-white font-semibold">About Us</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Contact Printer</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Careers</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Investor relations</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Sustainable impact</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Diversity, Equity and Inclusion</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Press center</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">The Garage</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Printer Store Newsletter</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Printer Printables Newsletter</li>
+            {["Contact Printer", "Careers", "Investor relations", "Sustainable impact", 
+              "Diversity, Equity and Inclusion", "Press center", "The Garage", 
+              "Printer Store Newsletter", "Printer Printables Newsletter"].map((item, index) => (
+              <li key={index} className="mb-2 hover:text-gray-400 cursor-pointer">{item}</li>
+            ))}
           </ul>
         </div>
 
@@ -27,11 +25,10 @@ const FooterSection = () => {
         <div>
           <ul>
             <li className="mb-2 text-white font-semibold">Ways to buy</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Shop online</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Call an Printer rep</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Find a reseller</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Enterprise store</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Public sector purchasing</li>
+            {["Shop online", "Call an Printer rep", "Find a reseller", 
+              "Enterprise store", "Public sector purchasing"].map((item, index) => (
+              <li key={index} className="mb-2 hover:text-gray-400 cursor-pointer">{item}</li>
+            ))}
           </ul>
         </div>
 
@@ -39,28 +36,23 @@ const FooterSection = () => {
         <div>
           <ul>
             <li className="mb-2 text-white font-semibold">Support</li>
-            <Link legacyBehavior href="/about">
-              <a className="mb-3 hover:text-gray-400 cursor-pointer">About</a>
-            </Link> 
-            <br/>
-            <Link legacyBehavior href="/privacyPolicy">
-              <a className="mb-2 hover:text-gray-400 cursor-pointer">Privacy Policy</a>
-            </Link> 
-            <br/>
-            <Link legacyBehavior href="/disclaimer">
-              <a className="mb-2 hover:text-gray-400 cursor-pointer">Disclaimer</a>
-            </Link> 
-            <br/>
-            <Link legacyBehavior href="/termsConditions">
-              <a className="mb-2 hover:text-gray-400 cursor-pointer">Terms &Conditions</a>
-            </Link> 
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Support & troubleshooting</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Download drivers</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Register your product</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Authorized service providers</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Check repair status</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Fraud alert</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Security Center</li>
+            {[
+              { label: "About", path: "/about" },
+              { label: "Privacy Policy", path: "/privacyPolicy" },
+              { label: "Disclaimer", path: "/disclaimer" },
+              { label: "Terms & Conditions", path: "/termsConditions" },
+            ].map((link, index) => (
+              <li key={index} className="mb-2">
+                <Link legacyBehavior href={link.path}>
+                  <a className="hover:text-gray-400 cursor-pointer">{link.label}</a>
+                </Link>
+              </li>
+            ))}
+            {["Support & troubleshooting", "Download drivers", "Register your product",
+              "Authorized service providers", "Check repair status", "Fraud alert",
+              "Security Center"].map((item, index) => (
+              <li key={index} className="mb-2 hover:text-gray-400 cursor-pointer">{item}</li>
+            ))}
           </ul>
         </div>
 
@@ -68,9 +60,9 @@ const FooterSection = () => {
         <div>
           <ul>
             <li className="mb-2 text-white font-semibold">Printer Partners</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Printer Amplify Partner Program</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Printer Partner Portal</li>
-            <li className="mb-2 hover:text-gray-400 cursor-pointer">Developers</li>
+            {["Printer Amplify Partner Program", "Printer Partner Portal", "Developers"].map((item, index) => (
+              <li key={index} className="mb-2 hover:text-gray-400 cursor-pointer">{item}</li>
+            ))}
           </ul>
         </div>
 
@@ -79,55 +71,24 @@ const FooterSection = () => {
           <ul>
             <li className="mb-2 text-white font-semibold">Stay connected</li>
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-gray-400 text-3xl">
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-              <a href="#" className="text-white hover:text-gray-400 text-3xl">
-                <FontAwesomeIcon icon={faFacebook} />
-              </a>
-              <a href="#" className="text-white hover:text-gray-400 text-3xl">
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-              <a href="#" className="text-white hover:text-gray-400 text-3xl">
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a href="#" className="text-white hover:text-gray-400 text-3xl">
-                <FontAwesomeIcon icon={faYoutube} />
-              </a>
-              <a href="#" className="text-white hover:text-gray-400 text-3xl">
-                <FontAwesomeIcon icon={faTiktok} />
-              </a>
+              {[faLinkedin, faFacebook, faInstagram, faTwitter, faYoutube, faTiktok].map((icon, index) => (
+                <a key={index} href="#" className="text-white hover:text-gray-400 text-2xl">
+                  <FontAwesomeIcon icon={icon} />
+                </a>
+              ))}
             </div>
           </ul>
-          {/* <p className="text-center md:text-left">&copy;2024 HP Development Company, L.P. All rights reserved. The information contained herein is subject to change without notice.</p> */}
         </div>
       </div>
 
-      {/* Lower part with terms and conditions */}
-      {/* <div className="border-t border-gray-600 py-4">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between text-xs text-gray-400">
-          <div className="flex flex-wrap space-x-2 mb-2 md:mb-0">
-            <a href="#" className="hover:text-white">Recalls</a>
-            <a href="#" className="hover:text-white">Product recycling</a>
-            <a href="#" className="hover:text-white">Accessibility</a>
-            <a href="#" className="hover:text-white">CA Supply Chains Act</a>
-            <a href="#" className="hover:text-white">Privacy</a>
-            <a href="#" className="hover:text-white">Use of cookies</a>
-            <a href="#" className="hover:text-white">Your privacy choices</a>
-            <a href="#" className="hover:text-white">Terms of use</a>
-            <a href="#" className="hover:text-white">Limited warranty statement</a>
-            <a href="#" className="hover:text-white">Terms & conditions of sales & service</a>
-          </div>
-          <p className="text-center md:text-left">&copy;2024 HP Development Company, L.P. The information contained herein is subject to change without notice.</p>
-        </div>
-      </div> */}
-      <div className="border-t border-gray-600 py-4 text-center">
+      {/* Lower part with copyright */}
+      <div className="border-t border-gray-600 py-4 text-center max-w-[1280px] w-[90%] mx-auto">
         <p className="text-xs text-gray-400">
-        © Copyright, All Rights Reserved by printersolutiononline
+          © Copyright, All Rights Reserved by printersolutiononline
         </p>
       </div>
     </footer>
   );
 };
 
-export default FooterSection
+export default FooterSection;
