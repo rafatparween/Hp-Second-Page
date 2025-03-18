@@ -7,8 +7,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "printersmartassistant",
-  description: "printersmartassistant",
+  title: "HP-Printer Support",
+  description: "HP-Printer Support",
 };
 
 export default function RootLayout({ children }) {
